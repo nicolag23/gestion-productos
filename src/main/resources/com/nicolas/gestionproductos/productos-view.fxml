@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+
+<VBox
+        alignment="CENTER"
+        spacing="20.0"
+        xmlns="http://javafx.com/javafx/17.0.12"
+        xmlns:fx="http://javafx.com/fxml/1"
+        fx:controller="com.nicolas.gestionproductos.controller.ProductosController"
+>
+    <Label text="Gestión de Productos" style="-fx-font-size: 18px" />
+
+    <HBox spacing="10" alignment="CENTER">
+        <TextField fx:id="txtId" promptText="Id" disable="true" prefWidth="40" />
+        <TextField fx:id="txtCodigo" promptText="Código" prefWidth="90" />
+        <TextField fx:id="txtNombre" promptText="Nombre" prefWidth="120" />
+        <TextField fx:id="txtPrecio" promptText="Precio" prefWidth="80" />
+        <TextField fx:id="txtStock" promptText="Stock" prefWidth="60" />
+    </HBox>
+
+    <HBox spacing="10" alignment="CENTER">
+        <Button fx:id="btnAgregar" onAction="#handleAgregarProducto" text="Agregar" defaultButton="true" />
+        <Button fx:id="btnActualizar" onAction="#handleActualizarProducto" text="Actualizar" disable="true" />
+        <Button fx:id="btnEliminar" onAction="#handleEliminarProducto" text="Eliminar" disable="true" />
+    </HBox>
+
+    <TableView fx:id="tableProductos" onMouseClicked="#handleSeleccionar">
+        <columns>
+            <TableColumn fx:id="colId" text="ID" prefWidth="50" />
+            <TableColumn fx:id="colCodigo" text="Código" prefWidth="100" />
+            <TableColumn fx:id="colNombre" text="Nombre" prefWidth="150" />
+            <TableColumn fx:id="colPrecio" text="Precio" prefWidth="100" />
+            <TableColumn fx:id="colStock" text="Stock" prefWidth="80" />
+        </columns>
+    </TableView>
+</VBox>
